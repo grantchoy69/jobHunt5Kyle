@@ -1,0 +1,145 @@
+{
+  "name": "Kyle Amundson",
+  "location": "San Diego, CA",
+  "email": "kyleaamundson@gmail.com",
+  "linkedinUrl": "linkedin.com/in/kyleamundson",
+  "summary": "Senior CRM and lifecycle marketing leader with proven success driving revenue through Email, SMS, Push, and In-App strategy. Grew SMS from 19% to 44% of digital sales at Hanna Andersson. Strong in segmentation, automation, loyalty programs, reporting, and cross-functional leadership (3 direct reports).",
+  "coreSkills": [
+    "CRM Strategy",
+    "Email & SMS Marketing",
+    "Segmentation",
+    "Lifecycle Journeys",
+    "Retention",
+    "ESP Management",
+    "Marketing Automation",
+    "Loyalty Programs",
+    "A/B Testing",
+    "Analytics",
+    "Salesforce",
+    "Google Analytics"
+  ],
+  "experience": [
+    {
+      "company": "Hanna Andersson",
+      "title": "Senior Manager, CRM",
+      "location": "San Diego, CA",
+      "dates": "Mar 2024–Present",
+      "bullets": [
+        "Promoted after scaling SMS from 19% to 44% of digital sales.",
+        "Lead CRM across Email, SMS, Push, and In-App channels; manage 3 direct reports.",
+        "Own channel strategy, communications calendar, segmentation, lifecycle, and data governance.",
+        "Build reporting frameworks and KPI dashboards for campaign and channel performance."
+      ]
+    },
+    {
+      "company": "Hanna Andersson",
+      "title": "Manager, Email & SMS Marketing",
+      "location": "",
+      "dates": "Oct 2022–Mar 2024",
+      "bullets": [
+        "Revitalized SMS performance and developed automated lifecycle journeys.",
+        "Executed cross-channel programs and strengthened ESP performance analytics."
+      ]
+    },
+    {
+      "company": "CURATEUR",
+      "title": "Senior Email Marketing Manager",
+      "location": "",
+      "dates": "Feb 2021–Sep 2022",
+      "bullets": [
+        "Owned full-funnel email strategy, automation, and testing to improve engagement and retention."
+      ]
+    },
+    {
+      "company": "CURATEUR",
+      "title": "Email Marketing Manager",
+      "location": "",
+      "dates": "Sep 2020–Feb 2021",
+      "bullets": [
+        "Managed campaign calendars, targeting, optimization, and performance analytics."
+      ]
+    },
+    {
+      "company": "Qdoba Restaurant Corporation",
+      "title": "CRM Campaign Analyst",
+      "location": "San Diego, CA",
+      "dates": "Dec 2018–Apr 2020",
+      "bullets": [
+        "Managed Email, SMS, Push, and In-App campaigns for loyalty members.",
+        "Implemented new CRM/loyalty and ESP platforms.",
+        "Designed automated lifecycle programs and segmentation models.",
+        "Built reporting to evaluate KPIs and campaign performance."
+      ]
+    },
+    {
+      "company": "Qdoba Restaurant Corporation",
+      "title": "Digital Campaign Coordinator",
+      "location": "",
+      "dates": "Aug 2017–Dec 2018",
+      "bullets": [
+        "Executed customer segmentation and cross-channel sends.",
+        "Built email and push performance dashboards and performed conversion analysis."
+      ]
+    },
+    {
+      "company": "University of California San Diego",
+      "title": "Marketing Project Coordinator",
+      "location": "La Jolla, CA",
+      "dates": "Apr 2017–Jul 2017",
+      "bullets": [
+        "Managed multi-team marketing projects, workflows, and promotional inventory.",
+        "Led kickoff meetings and aligned project goals across teams."
+      ]
+    },
+    {
+      "company": "Underground Elephant",
+      "title": "Quality Assurance",
+      "location": "",
+      "dates": "Jun 2016–Sep 2016",
+      "bullets": [
+        "Verified internet lead returns and supported sales workflows.",
+        "Used Salesforce to manage lead return processes.",
+        "Trained offshore QA teams in call procedures and rapport-building."
+      ]
+    },
+    {
+      "company": "Liquid Grids",
+      "title": "Social Media Coordinator & Analyst",
+      "location": "",
+      "dates": "Sep 2015–Jan 2016",
+      "bullets": [
+        "Created social content calendars and managed online communities.",
+        "Analyzed content performance and generated insights for campaigns.",
+        "Supported lead generation campaigns and influencer engagement."
+      ]
+    },
+    {
+      "company": "Liquid Grids",
+      "title": "Marketing and Client Services Intern",
+      "location": "",
+      "dates": "Jun 2015–Sep 2015",
+      "bullets": [
+        "Conducted content research and optimized platform data ingestion."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "University of San Diego",
+      "degree": "BBA, Marketing",
+      "years": "2012–2016"
+    },
+    {
+      "school": "Semester at Sea / ISE",
+      "degree": "",
+      "years": "2014"
+    }
+  ],
+  "certifications": [
+    "Hootsuite Platform Certification",
+    "Microsoft Office Specialist (Excel 2010)"
+  ],
+  "languages": [
+    "English"
+  ]
+}
