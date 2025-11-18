@@ -1,8 +1,15 @@
 library(jsonlite)
+library(officer)
+library(rmarkdown)
 
 # 1. Load data -------------------------------------------------------------
-setwd("~/jobHunt5Kyle")
+
 resumeFilePath <- "kyleResumeData.txt"
+setwd("~/jobHunt5Kyle")
+if (!file.exists(resumeFilePath)) {
+  stop(paste("File not found:", resumeFilePath, "Check getwd() and your file location."))
+}
+
 resumeData <- fromJSON(resumeFilePath, simplifyVector = FALSE)
 
 # 2. Helpers ---------------------------------------------------------------
@@ -28,7 +35,6 @@ buildExperienceLines <- function(experienceList, bulletPrefix) {
     )
     
     header <- gsub("  ", " ", header)
-    
     lines <- c(lines, header)
     
     if (!is.null(job$bullets)) {
@@ -41,6 +47,17 @@ buildExperienceLines <- function(experienceList, bulletPrefix) {
   }
   
   return(lines)
+}
+
+makeDocxFromLines <- function(lines, filePath) {
+  doc <- read_docx()
+  
+  for (i in seq_along(lines)) {
+    lineText <- lines[[i]]
+    doc <- body_add_par(doc, lineText, style = "Normal")
+  }
+  
+  print(doc, target = filePath)
 }
 
 # 3. Build ATS text version -----------------------------------------------
@@ -160,10 +177,23 @@ buildPrettyResume <- function(data) {
   return(lines)
 }
 
-# 5. Write outputs ---------------------------------------------------------
+# 5. Build content ---------------------------------------------------------
 
 atsLines <- buildAtsResume(resumeData)
 prettyLines <- buildPrettyResume(resumeData)
 
+# Optional plain text debug outputs
 writeLines(atsLines, "kyleAtsResume.txt")
 writeLines(prettyLines, "kylePrettyResume.md")
+
+# 6. Generate ATS .docx ----------------------------------------------------
+
+makeDocxFromLines(atsLines, "kyleAtsResume.docx")
+
+# 7. Generate pretty .docx from markdown ----------------------------------
+
+rmarkdown::render(
+  input = "kylePrettyResume.md",
+  output_format = "word_document",
+  output_file = "kylePrettyResume.docx"
+)
