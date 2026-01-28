@@ -1,0 +1,165 @@
+{
+  "name": "Kyle Amundson",
+  "location": "San Diego, CA",
+  "email": "kyleaamundson@gmail.com",
+  "linkedinUrl": "linkedin.com/in/kyleamundson",
+  "targetRoleTitle": "Director of CRM, Email & SMS Marketing (Luxury eCommerce)",
+  "summary": "Senior CRM and lifecycle marketing leader specializing in email and SMS retention programs for eCommerce brands. Proven success growing channel revenue, scaling automated lifecycle journeys, and driving repeat purchase behavior through segmentation, personalization, and rigorous testing. Grew SMS from 19% to 44% of sales at Hanna Andersson, while building a trigger and segmentation roadmap that increased conversion and personalized demand. Combines strategic ownership of CRM with hands-on campaign execution, analytics, and people leadership.",
+  "coreSkills": [
+    "CRM Strategy & Ownership",
+    "Email & SMS Retention Marketing",
+    "Lifecycle Journeys (Welcome, Post-Purchase, Win-Back, Loyalty)",
+    "Customer Segmentation & Personalization",
+    "Ecommerce & Direct-to-Consumer Marketing",
+    "Automated Campaign Flows",
+    "Triggered Messaging & Behavioral Targeting",
+    "Channel Optimization & Conversion Rate Optimization",
+    "Customer Lifetime Value (LTV) & Repeat Purchase Strategy",
+    "A/B Testing & Test Roadmap Development",
+    "Reporting, Dashboards & KPI Analysis",
+    "ESP & Marketing Automation Platforms",
+    "Data-Driven Decision Making",
+    "Cross-Functional Collaboration (Creative, Site, Loyalty, Analytics)",
+    "Team Leadership & People Management",
+    "Email Deliverability & List Management Best Practices",
+    "Google Analytics",
+    "Business Intelligence & CRM Analytics",
+    "HTML Email Basics & Creative Best Practices"
+  ],
+  "experience": [
+    {
+      "company": "Hanna Andersson",
+      "title": "Senior Manager, CRM",
+      "location": "San Diego, CA",
+      "dates": "Nov 2023–Present",
+      "bullets": [
+        "Lead CRM and retention strategy across Email and SMS channels, focusing on lifecycle campaigns that drive repeat purchase and customer lifetime value.",
+        "Grew SMS from 19% to 44% of sales by enhancing opt-in strategies, refining segmentation, and optimizing lifecycle flows for high-intent audiences.",
+        "Own the CRM roadmap, including planning, execution and optimization of automated journeys such as welcome, post-purchase, win-back and loyalty touchpoints.",
+        "Built and scaled a trigger program that now represents a significant share of email revenue, with the majority of demand coming from personalized, non-batch communications.",
+        "Expanded segmentation from broad batch campaigns to targeted structures (e.g., category-based and behavior-based segments), contributing to a double-digit year-over-year lift in conversion in peak periods.",
+        "Partner with Creative and Site teams to align content, linking strategy and landing experiences, ensuring a cohesive customer journey from message to on-site experience.",
+        "Develop and manage a structured test-and-learn roadmap, designing A/B tests on subject lines, offers, audiences and creative to continuously improve engagement and revenue.",
+        "Create recurring dashboards and performance readouts, translating engagement and conversion metrics into clear, actionable insights for senior leadership.",
+        "Manage and develop a team of 3 direct reports, clarifying priorities, providing coaching and helping them deliver high-quality campaign execution under tight timelines."
+      ]
+    },
+    {
+      "company": "Hanna Andersson",
+      "title": "Manager, Email & SMS Marketing",
+      "location": "",
+      "dates": "Oct 2022–Nov 2023",
+      "bullets": [
+        "Owned the day-to-day strategy and execution of email campaigns, bringing structure and predictability to the CRM calendar during peak seasons.",
+        "Led the initial launch and scaling of SMS as a performance channel, establishing list growth tactics, core automations and performance benchmarks.",
+        "Partnered with automation vendors and internal teams to expand triggered programs and enhance segmentation, laying the groundwork for a more personalized email and SMS program.",
+        "Improved reporting and analysis of campaign performance, evolving from basic KPI tracking to deeper insights that informed creative, segmentation and promotional decisions."
+      ]
+    },
+    {
+      "company": "CURATEUR",
+      "title": "Senior Email Marketing Manager",
+      "location": "",
+      "dates": "Feb 2021–Sep 2022",
+      "bullets": [
+        "Owned full-funnel email retention strategy for a subscription-based ecommerce brand, combining promotional, editorial and lifecycle journeys to support ongoing membership and upsell.",
+        "Designed and optimized automated flows for onboarding, post-purchase and reactivation, using engagement and purchase behavior to guide messaging and offers.",
+        "Collaborated closely with creative and merchandising teams to maintain a premium brand voice and visual experience across campaigns and flows."
+      ]
+    },
+    {
+      "company": "CURATEUR",
+      "title": "Email Marketing Manager",
+      "location": "",
+      "dates": "Sep 2020–Feb 2021",
+      "bullets": [
+        "Managed campaign calendars, targeting and execution for recurring drops and promotions, ensuring on-time delivery and alignment to brand and business goals.",
+        "Monitored performance metrics for campaigns and flows, recommending tests and optimization tactics to improve engagement and revenue."
+      ]
+    },
+    {
+      "company": "Qdoba Restaurant Corporation",
+      "title": "CRM Campaign Analyst",
+      "location": "San Diego, CA",
+      "dates": "Dec 2018–Apr 2020",
+      "bullets": [
+        "Managed Email, SMS, Push and In-App campaigns for loyalty members, focusing on frequency, offer strategy and channel mix to increase visit frequency and spend.",
+        "Implemented new CRM/loyalty and ESP platforms, partnering with IT and vendors to define data requirements, segmentation logic and campaign workflows.",
+        "Designed automated lifecycle programs for loyalty members, including onboarding, lapsed guest and limited-time promotions, informed by behavioral and transactional data.",
+        "Built reporting to evaluate channel and campaign KPIs, providing insight into offer performance, visit behavior and redemption patterns."
+      ]
+    },
+    {
+      "company": "Qdoba Restaurant Corporation",
+      "title": "Digital Campaign Coordinator",
+      "location": "",
+      "dates": "Aug 2017–Dec 2018",
+      "bullets": [
+        "Executed customer segmentation and cross-channel sends for system and corporate campaigns across email, push and in-app messaging.",
+        "Built recurring dashboards for email and push performance, analyzing open, click and conversion behavior and identifying opportunities for optimization.",
+        "Supported conversion funnel analysis and user experience reviews to improve digital performance for promotions and key initiatives."
+      ]
+    },
+    {
+      "company": "University of California San Diego",
+      "title": "Marketing Project Coordinator",
+      "location": "La Jolla, CA",
+      "dates": "Apr 2017–Jul 2017",
+      "bullets": [
+        "Managed multi-team marketing projects for university departments, coordinating timelines and deliverables across creative, web and analytics stakeholders.",
+        "Led kickoff meetings, defined project goals and managed workflows to ensure on-time, on-brand campaign execution."
+      ]
+    },
+    {
+      "company": "Underground Elephant",
+      "title": "Quality Assurance",
+      "location": "",
+      "dates": "Jun 2016–Sep 2016",
+      "bullets": [
+        "Verified internet lead quality and accuracy for B2C campaigns, supporting both revenue and customer experience goals.",
+        "Used Salesforce to manage lead return workflows and documentation.",
+        "Trained offshore QA teams on process, expectations and customer interaction approaches."
+      ]
+    },
+    {
+      "company": "Liquid Grids",
+      "title": "Social Media Coordinator & Analyst",
+      "location": "",
+      "dates": "Sep 2015–Jan 2016",
+      "bullets": [
+        "Created content calendars and managed online communities for health-focused campaigns, tailoring messaging to highly specific audiences.",
+        "Analyzed social performance data and translated trends and engagement patterns into actionable campaign recommendations.",
+        "Supported lead generation and influencer engagement efforts to grow audience reach and participation."
+      ]
+    },
+    {
+      "company": "Liquid Grids",
+      "title": "Marketing and Client Services Intern",
+      "location": "",
+      "dates": "Jun 2015–Sep 2015",
+      "bullets": [
+        "Conducted content and audience research to inform messaging strategy for niche communities.",
+        "Helped optimize data ingestion and platform configuration for improved reporting and audience insights."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "University of San Diego",
+      "degree": "BBA, Marketing",
+      "years": "2012–2016"
+    },
+    {
+      "school": "Semester at Sea / ISE",
+      "degree": "",
+      "years": "2014"
+    }
+  ],
+  "certifications": [
+    "Hootsuite Platform Certification",
+    "Microsoft Office Specialist (Excel 2010)"
+  ],
+  "languages": [
+    "English"
+  ]
+}

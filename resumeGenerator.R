@@ -2,17 +2,38 @@ library(jsonlite)
 library(officer)
 library(rmarkdown)
 
-# 1. Load data -------------------------------------------------------------
+# 1. Get JSON path from args -----------------------------------------------
 
-resumeFilePath <- "kyleResumeData.txt"
 setwd("~/jobHunt5Kyle")
-if (!file.exists(resumeFilePath)) {
-  stop(paste("File not found:", resumeFilePath, "Check getwd() and your file location."))
+
+getResumeFilePath <- function() {
+  args <- commandArgs(trailingOnly = TRUE)
+  
+  if (length(args) >= 1) {
+    return(args[1])
+  } else {
+    return("kyleResumeDataCur.json")
+  }
 }
+
+resumeFilePath <- getResumeFilePath()
+
+if (!file.exists(resumeFilePath)) {
+  stop(paste("JSON file not found:", resumeFilePath, "\nCheck getwd() and arguments."))
+}
+
+# Normalize path and get directory for outputs
+resumeFilePath <- normalizePath(resumeFilePath)
+resumeDirPath <- dirname(resumeFilePath)
+
+cat("Using resume JSON:", resumeFilePath, "\n")
+cat("Output directory:", resumeDirPath, "\n\n")
+
+# 2. Load data -------------------------------------------------------------
 
 resumeData <- fromJSON(resumeFilePath, simplifyVector = FALSE)
 
-# 2. Helpers ---------------------------------------------------------------
+# 3. Helper functions ------------------------------------------------------
 
 collapseWithSep <- function(x, sep) {
   if (length(x) == 0) {
@@ -58,9 +79,10 @@ makeDocxFromLines <- function(lines, filePath) {
   }
   
   print(doc, target = filePath)
+  cat("Wrote DOCX:", filePath, "\n")
 }
 
-# 3. Build ATS text version -----------------------------------------------
+# 4. Build ATS text version -----------------------------------------------
 
 buildAtsResume <- function(data) {
   lines <- character(0)
@@ -72,7 +94,14 @@ buildAtsResume <- function(data) {
     data$linkedinUrl,
     sep = " | "
   )
-  lines <- c(lines, headerLine, "")
+  lines <- c(lines, headerLine)
+  
+  if (!is.null(data$targetRoleTitle) && nzchar(data$targetRoleTitle)) {
+    targetLine <- paste("Target Role:", data$targetRoleTitle)
+    lines <- c(lines, targetLine)
+  }
+  
+  lines <- c(lines, "")
   
   lines <- c(lines, "SUMMARY")
   lines <- c(lines, data$summary, "")
@@ -117,7 +146,7 @@ buildAtsResume <- function(data) {
   return(lines)
 }
 
-# 4. Build “pretty” markdown version --------------------------------------
+# 5. Build pretty markdown version ----------------------------------------
 
 buildPrettyResume <- function(data) {
   lines <- character(0)
@@ -133,9 +162,14 @@ buildPrettyResume <- function(data) {
   lines <- c(
     lines,
     paste0("# ", data$name),
-    headerText,
-    ""
+    headerText
   )
+  
+  if (!is.null(data$targetRoleTitle) && nzchar(data$targetRoleTitle)) {
+    lines <- c(lines, paste0("### Target Role: ", data$targetRoleTitle))
+  }
+  
+  lines <- c(lines, "")
   
   lines <- c(lines, "## Summary")
   lines <- c(lines, data$summary, "")
@@ -177,23 +211,34 @@ buildPrettyResume <- function(data) {
   return(lines)
 }
 
-# 5. Build content ---------------------------------------------------------
+# 6. Build content and write plain text/markdown ---------------------------
 
 atsLines <- buildAtsResume(resumeData)
 prettyLines <- buildPrettyResume(resumeData)
 
-# Optional plain text debug outputs
-writeLines(atsLines, "kyleAtsResume.txt")
-writeLines(prettyLines, "kylePrettyResume.md")
+atsTxtPath <- file.path(resumeDirPath, "kyleAtsResume.txt")
+prettyMdPath <- file.path(resumeDirPath, "kylePrettyResume.md")
 
-# 6. Generate ATS .docx ----------------------------------------------------
+writeLines(atsLines, atsTxtPath)
+cat("Wrote ATS text:", atsTxtPath, "\n")
 
-makeDocxFromLines(atsLines, "kyleAtsResume.docx")
+writeLines(prettyLines, prettyMdPath)
+cat("Wrote pretty markdown:", prettyMdPath, "\n")
 
-# 7. Generate pretty .docx from markdown ----------------------------------
+# 7. Generate ATS DOCX -----------------------------------------------------
 
-rmarkdown::render(
-  input = "kylePrettyResume.md",
+atsDocxPath <- file.path(resumeDirPath, "kyleAtsResume.docx")
+makeDocxFromLines(atsLines, atsDocxPath)
+
+# 8. Generate pretty DOCX from markdown -----------------------------------
+
+prettyDocxPath <- file.path(resumeDirPath, "kylePrettyResume.docx")
+
+render(
+  input = prettyMdPath,
   output_format = "word_document",
-  output_file = "kylePrettyResume.docx"
+  output_file = prettyDocxPath
 )
+
+cat("Wrote pretty DOCX:", prettyDocxPath, "\n")
+cat("Done.\n")
