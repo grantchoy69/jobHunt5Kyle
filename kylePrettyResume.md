@@ -1,11 +1,15 @@
 # Kyle Amundson
 San Diego, CA · kyleaamundson@gmail.com · linkedin.com/in/kyleamundson
 
+## Education
+**BBA, Marketing** — University of San Diego (2012–2016)
+**Semester at Sea / ISE** — Semester at Sea / ISE (2014)
+
 ## Summary
-Director-level lifecycle marketing leader with expertise in developing and executing global strategies that drive customer retention, expansion, and measurable business impact through personalized engagement across Email, SMS, Push, and In-App channels. Scaled SMS demand to 26% of total CRM revenue at Hanna Andersson via innovative segmentation and automation, contributing to +8.6% full-year CRM comp. Excel in elevating customer marketing maturity by introducing data-driven frameworks and workflows for insight-driven programs, while fostering cross-functional collaboration with Marketing, Product, and Sales teams to align on growth objectives. Empower high-performing teams of 3 direct reports with a growth mindset, promoting accountability, innovation, and continuous improvement in fast-paced environments. Strong analytical acumen in translating customer data into actionable insights, optimizing for metrics like CVR (+12% Y/Y) and retention to accelerate loyalty and long-term value.
+Senior CRM and lifecycle marketing leader with proven success driving revenue through Email, SMS, Push, and In-App strategy. Grew SMS from 19% to 44% of digital sales at Hanna Andersson. Strong in segmentation, automation, loyalty programs, reporting, and cross-functional leadership (3 direct reports).
 
 ## Core Skills
-Lifecycle Journeys · Retention · CRM Strategy · Marketing Automation · Personalization · Segmentation · Analytics · A/B Testing · Cross-Channel Engagement · Customer Insights · ESP Management · Loyalty Programs · Salesforce · Google Analytics
+CRM Strategy · Email & SMS Marketing · Segmentation · Lifecycle Journeys · Retention · ESP Management · Marketing Automation · Loyalty Programs · A/B Testing · Analytics · Salesforce · Google Analytics
 
 ## Experience
 Hanna Andersson — Senior Manager, CRM | Mar 2024–Present | San Diego, CA
@@ -13,86 +17,45 @@ Hanna Andersson — Senior Manager, CRM | Mar 2024–Present | San Diego, CA
 - Lead CRM across Email, SMS, Push, and In-App channels; manage 3 direct reports.
 - Own channel strategy, communications calendar, segmentation, lifecycle, and data governance.
 - Build reporting frameworks and KPI dashboards for campaign and channel performance.
-- Translated lifecycle strategy into executional excellence, delivering personalized programs that drove customer impact and business growth.
-- Elevated customer marketing maturity by implementing new segmentation frameworks and testing roadmaps for scalable, insight-driven engagement.
-- Drove alignment and collaboration with cross-functional partners including Creative, Site, and Loyalty to embed lifecycle thinking in go-to-market initiatives.
-- Empowered team with culture of accountability and innovation, coaching on strategic operation and experimentation.
-- Strengthened data-driven decision making by partnering on analytics to turn engagement data into prioritization insights.
 
 Hanna Andersson — Manager, Email & SMS Marketing | Oct 2022–Mar 2024 
 - Revitalized SMS performance and developed automated lifecycle journeys.
 - Executed cross-channel programs and strengthened ESP performance analytics.
-- Managed day-to-day lifecycle strategy with limited direction, achieving +8.6% CRM comp through personalized engagement.
-- Drove personalization exceeding 50% demand from non-batch sends and >20% from triggers, enhancing retention.
-- Gained analytical aptitude to conduct weekly analysis and forecasting, extracting deep insights for program optimization.
-- Optimized elements for personalized experiences, resulting in +12% CVR through segmentation and content testing.
-- Navigated ambiguity in tech stack to deliver measurable impact on customer loyalty and expansion.
 
 CURATEUR — Senior Email Marketing Manager | Feb 2021–Sep 2022 
 - Owned full-funnel email strategy, automation, and testing to improve engagement and retention.
-- Developed lifecycle programs for personalized engagement, driving customer loyalty and growth.
-- Collaborated cross-functionally to align on retention objectives and data-driven insights.
-- Empowered team through coaching on experimentation and continuous improvement.
-- Analyzed data to strengthen decision making, optimizing for retention metrics.
 
 CURATEUR — Email Marketing Manager | Sep 2020–Feb 2021 
 - Managed campaign calendars, targeting, optimization, and performance analytics.
-- Executed segmentation for personalized journeys, enhancing customer retention.
-- Drove alignment with stakeholders for cohesive lifecycle strategies.
-- Introduced frameworks for data-driven program improvements.
-- Fostered growth mindset in testing and insights generation.
 
 Qdoba Restaurant Corporation — CRM Campaign Analyst | Dec 2018–Apr 2020 | San Diego, CA
 - Managed Email, SMS, Push, and In-App campaigns for loyalty members.
 - Implemented new CRM/loyalty and ESP platforms.
 - Designed automated lifecycle programs and segmentation models.
 - Built reporting to evaluate KPIs and campaign performance.
-- Elevated maturity with tools for personalized, scalable engagement.
-- Collaborated with Sales and Product for aligned growth initiatives.
-- Translated data into insights for retention and expansion impact.
-- Balanced strategy and execution in fast-paced environment.
-- Advocated customer voice through feedback integration.
 
 Qdoba Restaurant Corporation — Digital Campaign Coordinator | Aug 2017–Dec 2018 
 - Executed customer segmentation and cross-channel sends.
 - Built email and push performance dashboards and performed conversion analysis.
-- Supported lifecycle automation for improved retention.
-- Drove data-driven optimizations in ambiguity.
-- Collaborated on team initiatives for continuous improvement.
 
 University of California San Diego — Marketing Project Coordinator | Apr 2017–Jul 2017 | La Jolla, CA
 - Managed multi-team marketing projects, workflows, and promotional inventory.
 - Led kickoff meetings and aligned project goals across teams.
-- Fostered collaboration for executional excellence.
-- Introduced frameworks for efficient processes.
-- Analyzed performance for data-driven decisions.
 
 Underground Elephant — Quality Assurance | Jun 2016–Sep 2016 
 - Verified internet lead returns and supported sales workflows.
 - Used Salesforce to manage lead return processes.
 - Trained offshore QA teams in call procedures and rapport-building.
-- Ensured data accuracy for customer insights.
-- Collaborated on process improvements.
 
 Liquid Grids — Social Media Coordinator & Analyst | Sep 2015–Jan 2016 
 - Created social content calendars and managed online communities.
 - Analyzed content performance and generated insights for campaigns.
 - Supported lead generation campaigns and influencer engagement.
-- Developed segmentation for targeted engagement.
-- Drove data-driven content optimizations.
 
 Liquid Grids — Marketing and Client Services Intern | Jun 2015–Sep 2015 
 - Conducted content research and optimized platform data ingestion.
-- Assisted in lifecycle planning and analysis.
-- Supported cross-functional collaboration.
-
-## Education
-**BBA, Marketing** — University of San Diego (2012–2016)
-**Semester at Sea / ISE** — Semester at Sea / ISE (2014)
 
 ## Certifications
 -  Hootsuite Platform Certification
 -  Microsoft Office Specialist (Excel 2010)
 
-## Languages
-English

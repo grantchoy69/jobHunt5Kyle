@@ -87,7 +87,7 @@ makeDocxFromLines <- function(lines, filePath) {
 buildPrettyDocx <- function(data, outputPath) {
   doc <- read_docx()
   # Set narrow margins (0.5 inches = 1.27 cm)
-  secPr <- prop_section(page_margins = page_mar(top = 0.65, bottom = 0.65, left = 0.65, right = 0.65, gutter = 0))
+  secPr <- prop_section(page_margins = page_mar(top = 0.3, bottom = 0.3, left = 0.3, right = 0.3, gutter = 0))
   blockSec <- block_section(secPr)
   doc <- body_add(doc, blockSec)
   
@@ -105,190 +105,192 @@ buildPrettyDocx <- function(data, outputPath) {
   doc <- body_add_fpar(doc, fpar(ftext(data$name, headerFp)))
   
   # Add gray subheader (title/location)
-  subHeaderText <- paste("Senior Manager, CRM @ Hanna Andersson\n", data$location)
+  subHeaderText <- paste0("Senior Manager, CRM @ Hanna Andersson\n", data$location)
   doc <- body_add_fpar(doc, fpar(ftext(subHeaderText, subheaderFp)))
   
   # Add Contact as header section
   doc <- body_add_fpar(doc, fpar(ftext("Contact", sectionFp)))
-  contactText <- paste(data$email, " | www.linkedin.com/in/", data$linkedinUrl)
+  contactText <- paste0(data$email, " | www.linkedin.com/in/", data$linkedinUrl)
   doc <- body_add_fpar(doc, fpar(ftext(contactText, bodyFp)))
   
+  # Add Education
+  doc <- body_add_fpar(doc, fpar(ftext("Education", sectionFp)))
+  for (i in seq_along(data$education)) {
+    edu <- data$education[[i]]
+    eduLine <- paste0(edu$degree, " — ", edu$school, " (", edu$years, ")")
+    doc <- body_add_fpar(doc, fpar(ftext(eduLine, bodyFp)))
+  }
+  
   # Add Top Skills as horizontal list
-  doc <- body_add_fpar(doc, fpar(ftext("\nTop Skills", sectionFp)))
+  doc <- body_add_fpar(doc, fpar(ftext("Top Skills", sectionFp)))
   skillsText <- collapseWithSep(data$coreSkills, " | ")
   doc <- body_add_fpar(doc, fpar(ftext(skillsText, bodyFp)))
   
   # Add Languages
-  doc <- body_add_fpar(doc, fpar(ftext("\nLanguages", sectionFp)))
-  langsText <- collapseWithSep(data$languages, ", ")
-  doc <- body_add_fpar(doc, fpar(ftext(langsText, bodyFp)))
-  
+  # doc <- body_add_fpar(doc, fpar(ftext("Languages", sectionFp)))
+  # langsText <- collapseWithSep(data$languages, ", ")
+  # doc <- body_add_fpar(doc, fpar(ftext(langsText, bodyFp)))
+  # 
   # Add Certifications if present
-  if (!is.null(data$certifications) && length(data$certifications) > 0) {
-    doc <- body_add_fpar(doc, fpar(ftext("\nCertifications", sectionFp)))
-    certsText <- collapseWithSep(data$certifications, "\n")
-    doc <- body_add_fpar(doc, fpar(ftext(certsText, bodyFp)))
-  }
   
   # Add Summary
-  doc <- body_add_fpar(doc, fpar(ftext("\nSummary", sectionFp)))
+  doc <- body_add_fpar(doc, fpar(ftext("Summary", sectionFp)))
   doc <- body_add_fpar(doc, fpar(ftext(data$summary, bodyFp)))
   
   # Add Experience (condensed, group under companies if multiple roles)
-  doc <- body_add_fpar(doc, fpar(ftext("\nExperience", sectionFp)))
+  doc <- body_add_fpar(doc, fpar(ftext("Experience", sectionFp)))
   for (i in seq_along(data$experience)) {
     job <- data$experience[[i]]
-    jobHeader <- paste(job$company, "\n", job$title, "\n", job$dates, if (nzchar(job$location)) paste(" (", job$location, ")") else "")
+    jobHeader <- paste0(job$company, " | ", job$title, " | ", job$dates, if (nzchar(job$location)) paste0(" (", job$location, ")") else "")
     doc <- body_add_fpar(doc, fpar(ftext(jobHeader, subheaderFp)))
     if (!is.null(job$bullets)) {
       for (b in job$bullets) {
-        bulletText <- paste("- ", b)
+        bulletText <- paste0("-", b)
         doc <- body_add_fpar(doc, fpar(ftext(bulletText, bodyFp)))
       }
     }
   }
-  
-  # Add Education
-  # Add Education
-  doc <- body_add_fpar(doc, fpar(ftext("\nEducation", sectionFp)))
-  for (i in seq_along(data$education)) {
-    edu <- data$education[[i]]
-    eduLine <- paste(edu$degree, " — ", edu$school, " (", edu$years, ")")
-    doc <- body_add_fpar(doc, fpar(ftext(eduLine, bodyFp)))
+  if (!is.null(data$certifications) && length(data$certifications) > 0) {
+    doc <- body_add_fpar(doc, fpar(ftext("Certifications", sectionFp)))
+    certsText <- collapseWithSep(data$certifications, "\n")
+    doc <- body_add_fpar(doc, fpar(ftext(certsText, bodyFp)))
   }
+  
   
   print(doc, target = outputPath)
   cat("Wrote pretty DOCX:", outputPath, "\n")
 }
 
 # 4. Build ATS text version
-
-buildAtsResume <- function(data) {
-  lines <- character(0)
-  
-  headerLine <- paste(
-    data$name,
-    data$location,
-    data$email,
-    data$linkedinUrl,
-    sep = " | "
-  )
-  lines <- c(lines, headerLine)
-  
-  if (!is.null(data$targetRoleTitle) && nzchar(data$targetRoleTitle)) {
-    targetLine <- paste("Target Role:", data$targetRoleTitle)
-    lines <- c(lines, targetLine)
-  }
-  
-  lines <- c(lines, "")
-  
-  lines <- c(lines, "SUMMARY")
-  lines <- c(lines, data$summary, "")
-  
-  lines <- c(lines, "CORE SKILLS")
-  skillsLine <- collapseWithSep(data$coreSkills, " • ")
-  lines <- c(lines, skillsLine, "")
-  
-  lines <- c(lines, "EXPERIENCE")
-  experienceLines <- buildExperienceLines(data$experience, "•")
-  lines <- c(lines, experienceLines)
-  
-  lines <- c(lines, "EDUCATION")
-  for (i in seq_along(data$education)) {
-    edu <- data$education[[i]]
-    eduLine <- paste(
-      edu$degree,
-      "—",
-      edu$school,
-      "(",
-      edu$years,
-      ")"
-    )
-    lines <- c(lines, eduLine)
-  }
-  lines <- c(lines, "")
-  
-  if (!is.null(data$certifications) && length(data$certifications) > 0) {
-    lines <- c(lines, "CERTIFICATIONS")
-    for (c in data$certifications) {
-      lines <- c(lines, paste("•", c))
-    }
-    lines <- c(lines, "")
-  }
-  
-  if (!is.null(data$languages) && length(data$languages) > 0) {
-    lines <- c(lines, "LANGUAGES")
-    languageLine <- collapseWithSep(data$languages, ", ")
-    lines <- c(lines, languageLine)
-  }
-  
-  return(lines)
-}
+# 
+# buildAtsResume <- function(data) {
+#   lines <- character(0)
+#   
+#   headerLine <- paste(
+#     data$name,
+#     data$location,
+#     data$email,
+#     data$linkedinUrl,
+#     sep = " | "
+#   )
+#   lines <- c(lines, headerLine)
+#   
+#   if (!is.null(data$targetRoleTitle) && nzchar(data$targetRoleTitle)) {
+#     targetLine <- paste("Target Role:", data$targetRoleTitle)
+#     lines <- c(lines, targetLine)
+#   }
+#   
+#   lines <- c(lines, "")
+#   
+#   lines <- c(lines, "SUMMARY")
+#   lines <- c(lines, data$summary, "")
+#   
+#   lines <- c(lines, "CORE SKILLS")
+#   skillsLine <- collapseWithSep(data$coreSkills, " • ")
+#   lines <- c(lines, skillsLine, "")
+#   
+#   lines <- c(lines, "EXPERIENCE")
+#   experienceLines <- buildExperienceLines(data$experience, "•")
+#   lines <- c(lines, experienceLines)
+#   
+#   lines <- c(lines, "EDUCATION")
+#   for (i in seq_along(data$education)) {
+#     edu <- data$education[[i]]
+#     eduLine <- paste(
+#       edu$degree,
+#       "—",
+#       edu$school,
+#       "(",
+#       edu$years,
+#       ")"
+#     )
+#     lines <- c(lines, eduLine)
+#   }
+#   lines <- c(lines, "")
+#   
+#   if (!is.null(data$certifications) && length(data$certifications) > 0) {
+#     lines <- c(lines, "CERTIFICATIONS")
+#     for (c in data$certifications) {
+#       lines <- c(lines, paste("•", c))
+#     }
+#     lines <- c(lines, "")
+#   }
+#   
+#   if (!is.null(data$languages) && length(data$languages) > 0) {
+#     lines <- c(lines, "LANGUAGES")
+#     languageLine <- collapseWithSep(data$languages, ", ")
+#     lines <- c(lines, languageLine)
+#   }
+#   
+#   return(lines)
+# }
 
 # 5. Build pretty markdown version
 
-buildPrettyResume <- function(data) {
-  lines <- character(0)
+# buildPrettyResume <- function(data) {
+#   lines <- character(0)
+#   
+#   headerText <- paste(
+#     data$location,
+#     "·",
+#     data$email,
+#     "·",
+#     data$linkedinUrl
+#   )
+#   
+#   lines <- c(
+#     lines,
+#     paste0("# ", data$name),
+#     headerText
+#   )
+#   
+#   if (!is.null(data$targetRoleTitle) && nzchar(data$targetRoleTitle)) {
+#     lines <- c(lines, paste0("### Target Role: ", data$targetRoleTitle))
+#   }
+#   
+#   lines <- c(lines, "")
+#   
+#   lines <- c(lines, "## Education")
+#   for (i in seq_along(data$education)) {
+#     edu <- data$education[[i]]
+#     eduTitle <- edu$degree
+#     if (!nzchar(eduTitle)) {
+#       eduTitle <- edu$school
+#     }
+#     eduLine <- paste0("**", eduTitle, "** — ", edu$school, " (", edu$years, ")")
+#     lines <- c(lines, eduLine)
+#   }
+#   lines <- c(lines, "")
+#   
+#   lines <- c(lines, "## Summary")
+#   lines <- c(lines, data$summary, "")
+#   
+#   lines <- c(lines, "## Core Skills")
+#   skillsLine <- collapseWithSep(data$coreSkills, " · ")
+#   lines <- c(lines, skillsLine, "")
+#   
+#   lines <- c(lines, "## Experience")
+#   experienceLines <- buildExperienceLines(data$experience, "-")
+#   lines <- c(lines, experienceLines)
+#   
+#   
+#   
+#   if (!is.null(data$certifications) && length(data$certifications) > 0) {
+#     lines <- c(lines, "## Certifications")
+#     for (c in data$certifications) {
+#       lines <- c(lines, paste("- ", c))
+#     }
+#     lines <- c(lines, "")
+#   }
   
-  headerText <- paste(
-    data$location,
-    "·",
-    data$email,
-    "·",
-    data$linkedinUrl
-  )
-  
-  lines <- c(
-    lines,
-    paste0("# ", data$name),
-    headerText
-  )
-  
-  if (!is.null(data$targetRoleTitle) && nzchar(data$targetRoleTitle)) {
-    lines <- c(lines, paste0("### Target Role: ", data$targetRoleTitle))
-  }
-  
-  lines <- c(lines, "")
-  
-  lines <- c(lines, "## Summary")
-  lines <- c(lines, data$summary, "")
-  
-  lines <- c(lines, "## Core Skills")
-  skillsLine <- collapseWithSep(data$coreSkills, " · ")
-  lines <- c(lines, skillsLine, "")
-  
-  lines <- c(lines, "## Experience")
-  experienceLines <- buildExperienceLines(data$experience, "-")
-  lines <- c(lines, experienceLines)
-  
-  lines <- c(lines, "## Education")
-  for (i in seq_along(data$education)) {
-    edu <- data$education[[i]]
-    eduTitle <- edu$degree
-    if (!nzchar(eduTitle)) {
-      eduTitle <- edu$school
-    }
-    eduLine <- paste0("**", eduTitle, "** — ", edu$school, " (", edu$years, ")")
-    lines <- c(lines, eduLine)
-  }
-  lines <- c(lines, "")
-  
-  if (!is.null(data$certifications) && length(data$certifications) > 0) {
-    lines <- c(lines, "## Certifications")
-    for (c in data$certifications) {
-      lines <- c(lines, paste("- ", c))
-    }
-    lines <- c(lines, "")
-  }
-  
-  if (!is.null(data$languages) && length(data$languages) > 0) {
-    lines <- c(lines, "## Languages")
-    languageLine <- collapseWithSep(data$languages, ", ")
-    lines <- c(lines, languageLine)
-  }
-  
-  return(lines)
-}
+  # if (!is.null(data$languages) && length(data$languages) > 0) {
+  #   lines <- c(lines, "## Languages")
+  #   languageLine <- collapseWithSep(data$languages, ", ")
+  #   lines <- c(lines, languageLine)
+  # }
+#   
+#   return(lines)
+# }
 
 # 6. Build content and write plain text/markdown
 
